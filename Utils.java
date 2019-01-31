@@ -21,7 +21,7 @@ public class Utils{
     System.out.print(str);
   }
 
-  // A Function used to prinst a string to the console on a single line
+  // Function used to prinst a string to the console on a single line
   public static void print(int str){
     System.out.print(str);
   }
