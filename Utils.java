@@ -158,38 +158,50 @@ public class Utils{
     return letter + newString;
   }
 
-  //Function used to sort an int array
-  public static void toSelectionSort(int[] arrayToSort){
 
-    int minNumberIndex, tempNumber; //Minumum number and a temperary number
 
-    //Outer loop does the sort and the other loop checks for the smallest value
-    for(int index = 0; index < arrayToSort.length - 1; index ++){ //n - 1 sort
-      minNumberIndex = index;
 
-      for(int i = index + 1; i < arrayToSort.length; i++){ //Outer loop
 
-        //Check to see if the number we are sorting is smaller
-        //then the smallest KNOWN value
-        if(arrayToSort[i] < arrayToSort[minNumberIndex]){
-          minNumberIndex = i;
-        }
-      }
 
-      tempNumber = arrayToSort[minNumberIndex]; //Temp value for the number to swap
+  //A sub class that is used to hold all the kinds of sorts that i would ever need
+  public static class Sorts {
 
-      //We need to replace the min number with the larger minNumber
-      //and then use the temp number index and replace that with the bigger number
-      arrayToSort[minNumberIndex] = arrayToSort[index];
-      arrayToSort[index] = tempNumber;
-
+    //Function used to sort an int array and then return it
+    public static int[] toInsertionSort(int[] arrayToSort){
+      return null; //To change
     }
+
+    //Function used to sort an int array
+    public static void toSelectionSort(int[] arrayToSort){
+
+      int minNumberIndex, tempNumber; //Minumum number and a temperary number
+
+      //Outer loop does the sort and the other loop checks for the smallest value
+      for(int index = 0; index < arrayToSort.length - 1; index ++){ //n - 1 sort
+        minNumberIndex = index;
+
+        for(int i = index + 1; i < arrayToSort.length; i++){ //Outer loop
+
+          //Check to see if the number we are sorting is smaller
+          //then the smallest KNOWN value
+          if(arrayToSort[i] < arrayToSort[minNumberIndex]){
+            minNumberIndex = i;
+          }
+        }
+
+        tempNumber = arrayToSort[minNumberIndex]; //Temp value for the number to swap
+
+        //We need to replace the min number with the larger minNumber
+        //and then use the temp number index and replace that with the bigger number
+        arrayToSort[minNumberIndex] = arrayToSort[index];
+        arrayToSort[index] = tempNumber;
+
+      }
+    }
+
   }
 
-  //Function used to sort an int array and then return it
-  public static int[] toInsertionSort(int[] arrayToSort){
-    return null; //To change
-  }
+
 
   //Function used to take an array and convert it into a String
   public static String getArrayString(int[] array){
